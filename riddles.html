@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="sounds.js"></script>
+    <script src="script.js"></script>
+
+    <title>حجيتك ما جيتك - ألغاز جزائرية</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        
+        .riddles-section {
+            font-family: 'Tajawal', sans-serif;
+            padding: 3rem 1rem;
+            background-color: #f9f5ff;
+        }
+        
+        .riddles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #D9A441;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #ca8317, #f5bf6f);
+            margin: 1rem auto;
+        }
+        
+        .riddles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .riddle-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(106, 13, 173, 0.1);
+        }
+        
+        .riddle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 13, 173, 0.15);
+        }
+        
+        .riddle-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .answer {
+            display: none;
+            font-size: 1.1rem;
+            color: #D9A441;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-right: 4px solid #f5bf6f;
+        }
+        
+        .show-answer-btn {
+            background: linear-gradient(135deg, #D9A441, #ca8317);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .show-answer-btn:hover {
+            background: linear-gradient(135deg, #D9A441, #ca8317);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .riddles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="logo"><img src="assets/logo.jpg" alt="Logo" class="logo-image" /> </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">الصفحة الرئيسية</a></li>
+                    <li><a href="stories.html">حكايات زمان</a></li>
+                    <li><a href="riddles.html">حجيتك ما جيتك</a></li>
+                    <li><a href="sayings.html">قالو ناس زمان</a></li>
+                    <li><a href="index.html#about">عنا</a></li>
+                    <li><a href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="riddles-section">
+        <div class="riddles-container">
+            <h2 class="section-title">حجيتك ما جيتك</h2>
+            <div class="riddles-grid">
+                <!-- Riddle 1 -->
+                <div class="riddle-card" data-answer=" الشمعة">
+                    <p class="riddle-text">كل نهار يتوضى بدموعو ويصلي صلاتو ويموت في ثوبو
+                    </p>
+                    <form class="riddle-form">
+                      <label><input type="radio" name="riddle1" value=" الشمعة">  الشمعة</label><br>
+                      <label><input type="radio" name="riddle1" value="الوقت"> الوقت</label><br>
+                      <label><input type="radio" name="riddle1" value="الظل"> الظل</label><br>
+                      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+                    </form>
+                    <div class="feedback"></div>
+                  </div>
+                  
+                <!-- Riddle 2 -->
+<div class="riddle-card" data-answer="الإمام">
+    <p class="riddle-text">أبيض كي الصوف، لسانو أمضى من السيوف، وهو قايد الصفوف</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle2" value="المعلم"> المعلم</label><br>
+      <label><input type="radio" name="riddle2" value="الشرطي"> الشرطي</label><br>
+      <label><input type="radio" name="riddle2" value="الإمام"> الإمام</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 3 -->
+  <div class="riddle-card" data-answer="العين">
+    <p class="riddle-text">لالة أم الريش، والريش داير بيها، لوكان يمدولي مئة مليون ما نفرط فيها</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle3" value="الدجاجة"> الدجاجة</label><br>
+      <label><input type="radio" name="riddle3" value="العين"> العين</label><br>
+      <label><input type="radio" name="riddle3" value="الخاتم"> الخاتم</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 4 -->
+  <div class="riddle-card" data-answer="الماء">
+    <p class="riddle-text">لا كانك فاهم وفهيم، وقاري حروف الملة، واش لي هامل في الأوطان وهو خيار الغلة</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle4" value="الماء"> الماء</label><br>
+      <label><input type="radio" name="riddle4" value="الذهب"> الذهب</label><br>
+      <label><input type="radio" name="riddle4" value="الهواء"> الهواء</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 5 -->
+  <div class="riddle-card" data-answer="الشمس">
+    <p class="riddle-text">بنديرنا بندير النحاس، ما يطبل ما يتقاس، بالنهار عساس، وبالليل نعَّاس</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle5" value="القمر"> القمر</label><br>
+      <label><input type="radio" name="riddle5" value="الدف"> الدف</label><br>
+      <label><input type="radio" name="riddle5" value="الشمس"> الشمس</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 6 -->
+  <div class="riddle-card" data-answer="القمح">
+    <p class="riddle-text">على اللي رجليه من الحطب وراسه من الذهب</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle6" value="الإنسان"> الإنسان</label><br>
+      <label><input type="radio" name="riddle6" value="الجمل"> الجمل</label><br>
+      <label><input type="radio" name="riddle6" value="القمح"> القمح</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 7 -->
+  <div class="riddle-card" data-answer="البصلة">
+    <p class="riddle-text">قدها قد الدبسة، وفايتة السلطان في اللبسة</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle7" value="البصلة"> البصلة</label><br>
+      <label><input type="radio" name="riddle7" value="التفاح"> التفاح</label><br>
+      <label><input type="radio" name="riddle7" value="الطماطم"> الطماطم</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 8 -->
+  <div class="riddle-card" data-answer="المصباح">
+    <p class="riddle-text">قدها قد الفولة، وتعمر دار مقفولة</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle8" value="المصباح"> المصباح</label><br>
+      <label><input type="radio" name="riddle8" value="المفتاح"> المفتاح</label><br>
+      <label><input type="radio" name="riddle8" value="الشمعة"> الشمعة</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 9 -->
+  <div class="riddle-card" data-answer="البرنوس">
+    <p class="riddle-text">المسمي بالباء، والباء هي لباسو، بعد ما ينزاد باش يديرولو راسو</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle9" value="البشكير"> البشكير</label><br>
+      <label><input type="radio" name="riddle9" value="البرنوس"> البرنوس</label><br>
+      <label><input type="radio" name="riddle9" value="البرميل"> البرميل</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+  <!-- Riddle 10 -->
+  <div class="riddle-card" data-answer="الغربال">
+    <p class="riddle-text">بنينا قصر وحرنا في بنيانو، عد النجوم ومتعدش بيبانو</p>
+    <form class="riddle-form">
+      <label><input type="radio" name="riddle10" value="الدار"> الدار</label><br>
+      <label><input type="radio" name="riddle10" value="السجن"> السجن</label><br>
+      <label><input type="radio" name="riddle10" value="الغربال"> الغربال</label><br>
+      <button type="submit" class="submit-btn">تحقق من الإجابة</button>
+    </form>
+    <div class="feedback"></div>
+  </div>
+  
+          
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <div class="quick-links">
+                    <ul>
+                        <li><a href="index.html" class="active">الصفحة الرئيسية</a></li>
+                        <li><a href="stories.html">حكايات زمان</a></li>
+                        <li><a href="riddles.html">حجيتك ما جيتك</a></li>
+                        <li><a href="#about">عنا</a></li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> info@hkayatjdodna.com</p>
+                    <p><i class="fas fa-phone"></i> +213 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> سطيف</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>تابعنا</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 . حكايات جدودنا . جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.riddle-form').forEach(form => {
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        
+            const card = form.closest('.riddle-card');
+            const correctAnswer = card.dataset.answer;
+            const selected = form.querySelector('input[type="radio"]:checked');
+            const feedback = card.querySelector('.feedback');
+        
+            if (!selected) {
+              feedback.textContent = "اختر إجابة أولاً!";
+              feedback.style.color = "orange";
+              return;
+            }
+        
+            if (selected.value === correctAnswer) {
+              feedback.textContent = "إجابة صحيحة!";
+              feedback.style.color = "green";
+            } else {
+              feedback.textContent = "إجابة خاطئة  ! ";
+              feedback.style.color = "red";
+            }
+          });
+        });
+        </script>
+        
+</body>
+</html>

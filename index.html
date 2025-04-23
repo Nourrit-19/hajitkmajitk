@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="hero-section-styles.css">
+        <script src="sounds.js"></script>
+        <script src="script.js"></script>
+        <title>   حكايات جدودنا</title>
+    </head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- في داخل .header-container -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+            <div class="logo"><img src="assets/logo.jpg" alt="Logo" class="logo-image" /> </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">الصفحة الرئيسية</a></li>
+                    <li><a href="stories.html">حكايات زمان</a></li>
+                    <li><a href="riddles.html">حجيتك ما جيتك</a></li>
+                    <li><a href="sayings.html">قالو ناس زمان</a></li>
+                    <li><a href="index.html#about">عنا</a></li>
+                    <li><a href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+       
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">في كل حكاية... حكمة من الزمان</h1>
+            <p class="hero-subtitle">من المداشر والقصور، ومن فم الجدات، نحيي الحكايات اللي كبرت معانا، بحروف تحكي وتعلم وتحيي.</p>
+            <p class="story-quote" id="randomQuote"></p>
+            <button class="hero-cta" onclick="location.href='stories.html'">ابدأ الحكاية</button>
+        </div>
+    </section>
+      
+
+    <section class="story-showcase">
+        <h2>حكايات زمان</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="assets/story1-thumbnail.jpg" alt="قصة 1" class="story-image">
+                <h3 class="feature-title"> النية و الحيلة </h3>
+                <p class="feature-description">  قالت الحيلة انا ندي لي فوق لرض ونتي لي تحتها قالت النية....   </p>
+                <button class="read-story" onclick="location.href='story1.html'">اسمع الحكاية</button>
+            </div>
+            <div class="feature-card">
+                <img src="assets/story2-thumbnail.jpg" alt="قصة 2" class="story-image">
+                <h3 class="feature-title">  المشحاح و المرتاح</h3>
+                <p class="feature-description">    يسمع في ضربة فارغة على الحيط عاودها و حس بلي فيها حاجة تبعها حتى يلقى .  </p>
+                <button class="read-story" onclick="location.href='story2.html'">اسمع الحكاية</button>
+            </div>
+            <div class="feature-card">
+                <img src="assets/story3-thumbnail.jpg" alt="قصة 3" class="story-image">
+                <h3 class="feature-title">   الكسرة المرقومة </h3>
+                <p class="feature-description">      قالها من نهار ماتت المرحومة ما كليت كسرة مرقومة ....</p>
+                <button class="read-story" onclick="location.href='story3.html'">اسمع الحكاية</button>
+
+            </div>
+        </div>
+        <button class="explore-more" onclick="location.href='stories.html'" >حكايات اخرى </button>
+    </section>
+    
+    
+
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <h2>عنا </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>حكايات جدودنا يهدف إلى تقديم تجربة ثقافية وتعليمية ممتعة للكبار والمراهقين، من خلال استكشاف الحكايات الشعبية، الأمثال، والألغاز التراثية. صُمم ليجمع بين الأصالة والمتعة، ويتيح للمستخدمين التفاعل مع محتوى مستوحى من التراث الشفهي، بأسلوب حديث وسهل الاستخدام.
+                    </p>
+                    <p>
+                        فريقنا يتكوّن من مطورين ومصممين شغوفين بالحفاظ على الذاكرة الشعبية، ويطمح إلى إعادة إحياء روح حكايات الجدود، وتحفيز التفكير من خلال ألغاز ومعاني مأخوذة من واقعنا الثقافي.
+                        
+                   .</p>
+                    
+                </div>
+                <div class="about-image">
+                    <img src="assets/about-image.jpg" alt="عن المشروع">
+                </div>
+            </div>
+            <div class="cta-box">
+                <p>إذا كان لديك أي استفسارات أو اقتراحات، لا تتردد في <a href="#contact" class="cta-link">الاتصال بنا</a>.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <h2>اتصل بنا</h2>
+            <div class="contact-content">
+                <div class="contact-methods">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>البريد الإلكتروني</h3>
+                            <p>info@hkayatjdodna.com</p>
+                            <a href="mailto:info@kidstales.com" class="contact-link">ارسل رسالة</a>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>الهاتف</h3>
+                            <p>+213 123 456 789</p>
+                            <a href="tel:+213123456789" class="contact-link">اتصل الآن</a>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>العنوان</h3>
+                            <p>سطيف ,  الجزائر</p>
+                            <a href="https://maps.google.com" target="_blank" class="contact-link">عرض الخريطة</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <h3>تواصل معنا عبر</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com" target="_blank" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/213123456789" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <div class="quick-links">
+                    <ul>
+                        <li><a href="index.html" class="active">الصفحة الرئيسية</a></li>
+                        <li><a href="stories.html">حكايات زمان</a></li>
+                        <li><a href="riddles.html">حجيتك ما جيتك</a></li>
+                        <li><a href="#about">عنا</a></li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> info@hkayatjdodna.com</p>
+                    <p><i class="fas fa-phone"></i> +213 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> سطيف</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>تابعنا</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 . حكايات جدودنا . جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    const quotes = [
+      "طلب منها جدها تقطع لبصل و تعصرو  بقطعة شاش ...وبعد ما تزوجت قالتلهم على السر...",
+      "يسمع في ضربة فارغة على الحيط عاودها و حس بلي فيها حاجة تبعها حتى يلقى ....",
+      "  وين دمك وين همك     ",
+      " قدها قد الفولة، وتعمر دار مقفولة",
+      
+    ];
+  
+    let lastIndex = -1;
+  
+    function getRandomQuoteIndex() {
+      let index;
+      do {
+        index = Math.floor(Math.random() * quotes.length);
+      } while (index === lastIndex);
+      lastIndex = index;
+      return index;
+    }
+  
+    function updateQuote() {
+      const quoteBox = document.getElementById('randomQuote');
+      if (quoteBox) {
+        const index = getRandomQuoteIndex();
+        quoteBox.textContent = quotes[index];
+      }
+    }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      updateQuote(); // أول مرة
+      setInterval(updateQuote, 5000); // كل 20 ثانية (20,000 ميلي ثانية)
+    });
+   
+  
+
+
+  </script>
+  
+  
+  
+  
+</html>

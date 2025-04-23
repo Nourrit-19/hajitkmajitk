@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="sounds.js"></script>
+    <script src="script.js"></script>
+
+    <title>حكاية النية و الحيلة</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <div class="logo"><img src="assets/logo.jpg" alt="Logo" class="logo-image" /> </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">الصفحة الرئيسية</a></li>
+                    <li><a href="stories.html">حكايات زمان</a></li>
+                    <li><a href="riddles.html">حجيتك ما جيتك</a></li>
+                    <li><a href="sayings.html">قالو ناس زمان</a></li>
+                    <li><a href="index.html#about">عنا</a></li>
+                    <li><a href="index.html#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="story-page">
+        <div class="story-hero" style="text-align: center;">
+            <h1>حكاية النية و الحيلة</h1>
+        </div>
+
+        <div class="story-media-container">
+            <div class="story-video-wrapper">
+                <video controls autoplay poster="images/story1-poster.jpg" style="width:100%; height:80vh;">
+                    <source src="media/story1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <section class="story-extras">
+
+                <!-- 🪶 مثل شعبي مرتبط بالحكاية -->
+                <div class="proverb-highlight">
+                  <h3>قالو ناس زمان:</h3>
+                  <blockquote>   مول النيةاذا ما ربح يسلك على خير </blockquote>
+                </div>
+              
+                
+              
+                <section class="grandma-memory">
+                    <h2>وش كانت جدتك تحكيلك؟</h2>
+                    <p class="memory-intro">
+                      كل واحد فينا عندو حكاية محفورة في الذاكرة... شاركنا حكاية أو مثل كنت تسمعو من جدتك أو جدك.
+                    </p>
+                  
+                    <form id="memoryForm">
+                      <input type="text" id="memoryName" placeholder="اسمك (اختياري)" />
+                      <textarea id="memoryText" rows="5" placeholder="اكتب الحكاية أو الذكرى هنا..." required></textarea>
+                      <button type="submit">شارك الحكاية</button>
+                    </form>
+                  
+                    <div id="memoryList" class="memory-list"></div>
+                  </section>
+                  
+              
+              
+        </div>
+
+        
+    </main>
+    <div class="story-actions">
+        <button class="back-btn" onclick="location.href='stories.html'">
+            <i class="fas fa-arrow-right"></i> العودة للقصص
+        </button>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>روابط سريعة</h3>
+                <div class="quick-links">
+                    <ul>
+                        <li><a href="index.html" class="active">الصفحة الرئيسية</a></li>
+                        <li><a href="stories.html">حكايات زمان</a></li>
+                        <li><a href="riddles.html">حجيتك ما جيتك</a></li>
+                        <li><a href="#about">عنا</a></li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> info@hkayatjdodna.com</p>
+                    <p><i class="fas fa-phone"></i> +213 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> سطيف</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>تابعنا</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 . حكايات جدودنا . جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function shareStory() {
+      const url = window.location.href;
+      const text = "شوفوا حكاية الغول والعجوز الحكيمة 👵👹 من موقع حكايات جدودنا:";
+      const shareData = {
+        title: "حكايات جدودنا",
+        text: text,
+        url: url
+      };
+  
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('تمت المشاركة!'))
+          .catch(err => console.error('مشكلة في المشاركة', err));
+      } else {
+        // إذا المتصفح ما يدعم المشاركة
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+      }
+    }
+    
+  document.addEventListener('DOMContentLoaded', function () {
+    const memoryForm = document.getElementById('memoryForm');
+    const memoryList = document.getElementById('memoryList');
+
+    function loadMemories() {
+      const memories = JSON.parse(localStorage.getItem('memories')) || [];
+      memoryList.innerHTML = '';
+      memories.reverse().forEach((mem, index) => {
+        const div = document.createElement('div');
+        div.className = 'memory-item';
+        div.innerHTML = `
+          <div class="memory-name">👵 ${mem.name}</div>
+          <div class="memory-text">${mem.text}</div>
+          <button class="delete-btn" onclick="deleteMemory(${memories.length - 1 - index})">🗑️ حذف</button>
+        `;
+        memoryList.appendChild(div);
+      });
+    }
+
+    memoryForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('memoryName').value || "زائر";
+      const text = document.getElementById('memoryText').value;
+      if (!text.trim()) return;
+
+      const memory = { name, text };
+      const memories = JSON.parse(localStorage.getItem('memories')) || [];
+      memories.push(memory);
+      localStorage.setItem('memories', JSON.stringify(memories));
+
+      memoryForm.reset();
+      loadMemories();
+    });
+
+    window.deleteMemory = function(index) {
+      const memories = JSON.parse(localStorage.getItem('memories')) || [];
+      memories.splice(index, 1);
+      localStorage.setItem('memories', JSON.stringify(memories));
+      loadMemories();
+    }
+
+    loadMemories();
+  });
+</script>
+  
+  
+</html>
+
